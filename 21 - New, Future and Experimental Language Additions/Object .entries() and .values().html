@@ -23,10 +23,19 @@
     console.log(totalInventory);
 
     // Print an inventory list with numbers
+    // option 1...
+    Object.entries(inventory).forEach(pair => {
+      console.log(pair);
+      // option 2...
+      const [key, val] = pair;
+      console.log(key, val);
+    })
+    // option 3...
     Object.entries(inventory).forEach(([key, val]) => {
       console.log(key, val);
     });
-
+    // option 4...
+    // no we can't for...of on an Object, but we can for...of on Object.entries()
     for (const [key, val] of Object.entries(inventory)) {
       console.log(key);
       if (key === 'jeans') break;

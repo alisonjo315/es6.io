@@ -177,10 +177,34 @@
         "display_src":"https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e35/11326072_550275398458202_1726754023_n.jpg"
      }
   ];
+
+  // neither of these will work -- "arrays" dont use index thingys in this way (apparently??)
+  // posts.FpTyHQcau;
+  // posts['FpTyHQcau'];
+
+  // const post = posts.find(post => {
+  //   // not 100% sure about the next three lines
+  //   if post.code === 'VBgtGQcSf' {
+  //       return post;
+  //   }
+  // });
+
+  // not sure at ALL about the next code block....
+  // const postIndex = posts.findIdex(post => {
+  //     if (post.code === code {
+  //       return true;
+  //       }
+  //       return false;
+  //     )
+  //   });
+
   const code = 'VBgtGQcSf';
   const post = posts.find(post => post.code === code);
 
+
   const postIndex = posts.findIndex(post => post.code === code);
+
+
   console.log(postIndex);
 
 </script>

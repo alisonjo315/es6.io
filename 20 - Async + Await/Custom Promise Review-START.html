@@ -7,6 +7,17 @@
 
 <body>
   <script>
+    function breathe(amount) {
+      return new Promise((resolve, reject) => {
+        // see other version of this file for example of adding a "reject" for if the breath is less than 500ms
+        setTimeout(() => resolve(`Done for ${amount} ms`), amount);
+      });
+    }
+    breathe(1000).then(res => {
+      console.log(res);
+      return breathe(500);
+    });
+    // ^^ see other version of this file for example with chained then() stuff
 
   </script>
 </body>

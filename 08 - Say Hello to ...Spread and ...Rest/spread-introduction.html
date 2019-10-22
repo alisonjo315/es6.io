@@ -11,8 +11,22 @@
   const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
 
   const pizzas = [...featured, 'veg', ...specialty];
-  const fridayPizzas = [...pizzas];
+  // console.log(pizzas);
 
+  let myarray = [..."alison"]
+  console.log(myarray);
+
+  // const fridayPizzas = pizzas;
+  // fridayPizzas[0] = "Canada Pie";
+  // console.log(fridayPizzas);
+  // console.log(pizzas); //omg that's not what i meant!!...
+  // ok so let's create fridayPizzas out of a *copy of* pizzas, instead of a reference to pizzas, which apparently is what that first attempt was (and apparently "a reference to" means that changes affect the reference and referenced?!)
+  const fridayPizzas = [...pizzas];
+  fridayPizzas[0] = "Canada Pie";
+  console.log(fridayPizzas);
+  console.log(pizzas);
+
+  // This last code block is actually for "more-spread-examples.html"
   const deepDish = {
     pizzaName: 'Deep Dish',
     size: 'Medium',

@@ -6,22 +6,27 @@
 </head>
 <body>
 <script>
-  /* eslint-disable */
-   Array.prototype.shuffle = function() {
-     var i = this.length, j, temp;
-     if ( i == 0 ) return this;
-     while ( --i ) {
-      j = Math.floor( Math.random() * ( i + 1 ) );
-      temp = this[i];
-      this[i] = this[j];
-      this[j] = temp;
-    }
-    return this;
-  };
+
+  // In this section, he's showing why "Old Way #3" can be problematic if someone decides to muck with "the prototype" -- if you comment out the "//"-commented lines here, AND the "cuts.shop" line above the "Old Ways" code blocks.  THEN, you'll see the MADNESS that can happen if someone mucks with ethe prototype and you use "for in" instead of "for of"...
+  // /* eslint-disable */
+  //  Array.prototype.shuffle = function() {
+  //    var i = this.length, j, temp;
+  //    if ( i == 0 ) return this;
+  //    while ( --i ) {
+  //     j = Math.floor( Math.random() * ( i + 1 ) );
+  //     temp = this[i];
+  //     this[i] = this[j];
+  //     this[j] = temp;
+  //   }
+  //   return this;
+  // };
 
   const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
 
+  // uncomment for "mucking with prototype problem" (see above + "Old Way #3")
   cuts.shop = 'MM MEats';
+
+  // Different ways to loop! (starting with The Old Days, apparently)
 
   // for (let i = 0; i < cuts.length; i++) {
   //   console.log(cuts[i]);
@@ -34,15 +39,16 @@
   //   }
   // });
 
+  // Old Way #3 (see top)
   // for (const index in cuts) {
   //   console.log(cuts[index]);
   // }
 
   for (const cut of cuts) {
+    console.log(cut);
     if(cut === 'Brisket') {
       continue;
     }
-    console.log(cut);
   }
 
 </script>

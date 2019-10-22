@@ -7,19 +7,27 @@
 <body>
 <script>
   const wes = Symbol('Wes');
+  // ^^ the 'Wes' in Symbol() is a "descriptor"
+  console.log(wes);
   const person = Symbol('Wes');
 
   const classRoom = {
+    // 'Mark': {grade: 50, gender: 'male'},
+    // 'Olivia': {grade: 80, gender: 'female'},
+    // 'Olivia': {grade: 78, gender: 'female'}
+    // OH NO! TWO OLIVIAS!
     [Symbol('Mark')] : { grade: 50, gender: 'male' },
-    [Symbol('olivia')]: { grade: 80, gender: 'female' },
-    [Symbol('olivia')]: { grade: 80, gender: 'female' },
+    [Symbol('Olivia')]: { grade: 80, gender: 'female' },
+    [Symbol('Olivia')]: { grade: 80, gender: 'female' },
   };
 
+  // reminder: can't use for...of with objects
   for (const person in classRoom) {
     console.log(person);
   }
 
   const syms = Object.getOwnPropertySymbols(classRoom);
+  console.log(syms);
   const data = syms.map(sym => classRoom[sym]);
   console.log(data);
 

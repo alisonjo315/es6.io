@@ -7,6 +7,51 @@
 
 <body>
   <script>
+  	// setInterval(() => console.log(Date.now()), 500);
+  	// ^^ not blocking -- things keep going -- "asynchronous"
+  	// setInterval(() => alert(Date.now()), 1500);
+  	// ^^ blocking -- things keep going -- "synchronous"
+
+    function breathe(amount) {
+      return new Promise((resolve, reject) => {
+        if (amount < 500) {
+          reject('That is too small of a value');
+        }
+        setTimeout(() => resolve(`Done for ${amount} ms`), amount);
+      });
+    }
+
+	function go() {
+    	// will throw  error b/c "await" can only be used on async functions
+    	await breathe(600);
+    }
+    async function go() {
+    	console.log('start');
+    	// without "await" here, it'll return a promise
+    	// const res = breathe(1000);
+    	// with "await," it holds off til the thing is done, so you get what was promised, instead of just "there is a promise"
+    	const res = await breathe(1000);
+    	console.log(res);
+    	const res2 = await breathe(5000);
+    	console.log(res);
+    	const res3 = await breathe(500);
+    	console.log(res);
+    	console.log('end');
+    }
+
+/*
+    // some background / an example he shared from a different class about "Node"
+    const userPage = router.get('/user', (req, res, next) => {
+      const users = User.find({email: 'wesbos'});
+    })
+    const userPage = router.get('/user', async (req, res, next) => {
+      const users = await User.find({email: 'wesbos'}); // 10 users
+    })
+    // then he showed another version of this ^^ with a try/catch
+    // then he went into talking about "high order functions"
+*/
+
+// basically, just look at the other version of this file, I put some notes in there, too.
 
   </script>
 </body>

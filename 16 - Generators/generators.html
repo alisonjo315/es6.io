@@ -6,6 +6,20 @@
 </head>
 <body>
 <script>
+/*  
+  function* listPeople() {
+    // if you "return", the funtion is over / you exit / etc.
+    // return blahblah;
+    // whereas with "yield..."
+    yield 'Wes';
+    yield 'Kait';
+    yield 'Snickers'
+  }
+  const people = listPeople();
+  console.log(people);
+  console.log(people.next());
+*/
+
   function* listPeople() {
     let i = 0;
     yield i;
@@ -36,6 +50,9 @@
 
   const inventorGen = loop(inventors);
 
+  console.log(inventorGen);
+  console.log(inventorGen.next());
+  console.log(inventorGen.next().value);
 
 </script>
 </body>

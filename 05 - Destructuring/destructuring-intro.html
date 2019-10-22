@@ -14,6 +14,9 @@
     twitter: '@wesbos'
   };
 
+  // const first = person.first;
+  // const last = person.last;
+  // **OR!** -- destructuring magic!
   const { first, last, twitter } = person;
 
   const wes = {
@@ -30,9 +33,17 @@
     }
   };
 
+  // const twitter = wes.links.social.twitter;
+  // const facebook = wes.links.social.facebook;
+  // **OR!** -- destructuring magic!
+  // const { twitter, facebook } = wes.links.social;
+  // EXCEPT, we already have variables called "twitter" and "facebook"...
+  // BUT it's okay, we'll just set new variable names while we destructure: tweet, fb
   const { twitter: tweet, facebook: fb } = wes.links.social;
 
-  const settings = { width: 300, color: 'black' }  // height, fontSize
+  // Another way to use "destructuring" magic... pretty confusing to me (there's another example in "destructuring-WTF.html"), BUT, the instructor says it's more edge-casey, so, I'm gonna move on for now.
+  const settings = { width: 300, color: 'black' }
+  // But now we want to add height, fontSize
   const { width = 100, height = 100, color = 'blue', fontSize = 25} = settings;
 
 </script>

@@ -11,9 +11,13 @@
     fetch(url).then(data => data.json()).then(data => dataGen.next(data))
   }
 
+  // the asterisk indicates "this is a generator"
+  // both of these syntaxes are fine
+  // function *steps() {
   function* steps() {
     console.log('fetching beers');
     const beers = yield ajax('http://api.react.beer/v2/search?q=hops&type=beer');
+    // the script won't continue until the ajax call is done / when we've gotten the data back -- same with the other ajax calls below
     console.log(beers);
 
     console.log('fetching wes');
@@ -25,7 +29,9 @@
     console.log(fatJoe);
   }
 
+  // on page load, we'll create a new generator
   const dataGen = steps();
+  // this next line is to kick things off
   dataGen.next(); // kick it off
 
 </script>

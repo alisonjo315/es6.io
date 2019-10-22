@@ -13,6 +13,10 @@
   brunch.add('Simone');
   // ready to open!
   const line = brunch.values();
+  // "line" is a set iterator, according to the output of this next log thing:
+  // console.log(line);
+  // this next log thing shows the "entirety" of the "wes" object / the "wes" item in the set called "brunch"
+  // console.log(line.next());
   console.log(line.next().value);
   console.log(line.next().value);
   brunch.add('Heather');
@@ -20,7 +24,12 @@
   console.log(line.next().value);
   console.log(line.next().value);
   console.log(line.next().value);
+  // ^^ even though I'm adding items after creating "brunch" AND after creating "line", heather and snickers are output in the last two line.next().value console logs
+  // P.S. when I did the following, in the console, it spit out "wes" each time -- apparently it really matters to save brunch.values() as a new variable before trying to "next" through the items
+  // console.log(brunch.values().next().value);
+  // console.log(brunch.values().next().value);
+  // console.log(brunch.values().next().value);
 
-</script>
+  </script>
 </body>
 </html>

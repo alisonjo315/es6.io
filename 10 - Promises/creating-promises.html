@@ -6,6 +6,26 @@
 </head>
 <body>
 <script>
+
+/* my notes...
+  // a promise will either "work out" or it "won't work out" -- resolve, reject
+  const p = new Promise((resolve, reject) => {
+    resolve('Wes is cool');
+    setTimeout(() => {
+      // reject('Err wes isn\t cool');
+      // Or, this way, you return an error object, which makes it easier to debug, something about line numbers (very end of video).
+      reject(Error('Err wes isn\'t cool'));
+    }, 1000);
+  });
+  p
+    .then(data => {
+      console.log(data);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+*/
+
   const p = new Promise((resolve, reject) => {
     setTimeout(() => {
       reject(Error('Err wes isn\'t cool'));

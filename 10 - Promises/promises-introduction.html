@@ -6,7 +6,15 @@
 </head>
 <body>
 <script>
+
+// add here the part from the beginning of this video, something about "postsVariables"...
 const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts');
+
+	// // "then()" will only happen when the data comes back
+	// postsPromise.then(data = {
+	// 	// i have this line wrong... the next code block has good stuff
+	// 	console.log(data.json());
+	// });
 
 postsPromise
   .then(data => data.json())

@@ -3,7 +3,9 @@
     "es6": true,
     "browser": true
   },
-  "extends": "airbnb",
+  "extends": "eslint:recommended",
+  // to use airbnb, see the npm install command in npmCheatsheet.md
+  // "extends": "airbnb",
   "rules": {
     "no-console": 0,
     "no-unused-vars": 1

@@ -10,10 +10,13 @@
   let dog2 = { name: 'sunny', age: 1 };
 
   const weakSauce = new WeakSet([dog1, dog2]);
+  // throws error b/c "clear" can't be called on a weak set, b/c it automatically cleans up after itself...
+  // weakSauce.clear();
 
   console.log(weakSauce);
   dog1 = null;
   console.log(weakSauce);
+  // ^^ should be just one entry, although sometimes both are still there because memory leak blah blah blah
 
 </script>
 </body>

@@ -8,11 +8,14 @@
 <script>
   const safeHandler = {
     set(target, name, value) {
+      // find all the keys that are like what the user is looking for, but all lowercase, of course
       const likeKey = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase());
 
+      // "if they're trying to set a new property, and if there is a key that's sorta like "id", then throw an error -- let them know there's already a property key like what you're trying to set
       if (!(name in target) && likeKey) {
         throw new Error(`Oops! Looks like like we already have a(n) ${name} property but with the case of ${likeKey}.`);
       }
+      // if not, carry on and set the key for them
       target[name] = value;
     }
   };

@@ -1,0 +1,79 @@
+TypeError: document.head is null inject.js:133:3
+Chuck for-of-examples.html:22:13
+Brisket for-of-examples.html:22:13
+Shank for-of-examples.html:22:13
+Short Rib for-of-examples.html:22:13
+const meat = cuts.entries();
+undefined
+meat
+Array Iterator
+​
+<prototype>: Array Iterator { … }
+
+meat.next()
+Object { value: (2) […], done: false }
+
+meat.next();
+Object { value: (2) […], done: false }
+
+meat.next();
+Object { value: (2) […], done: false }
+
+meat.next();
+Object { value: (2) […], done: false }
+
+meat.next();
+Object { value: undefined, done: true }
+
+Navigated to file:///C:/Users/ajm524/Documents/vm_shared/javascript-class.es6.io/06%20-%20Iterables%20&%20Looping/for-of-examples.html
+C for-of-examples.html:30:13
+r for-of-examples.html:30:13
+a for-of-examples.html:30:13
+r for-of-examples.html:30:13
+Navigated to file:///C:/Users/ajm524/Documents/vm_shared/javascript-class.es6.io/06%20-%20Iterables%20&%20Looping/for-of-examples.html
+Chuck for-of-examples.html:30:13
+Brisket for-of-examples.html:30:13
+Shank for-of-examples.html:30:13
+Short Rib for-of-examples.html:30:13
+Navigated to file:///C:/Users/ajm524/Documents/vm_shared/javascript-class.es6.io/06%20-%20Iterables%20&%20Looping/for-of-examples.html
+Chuck is the 1 item for-of-examples.html:31:13
+Brisket is the 2 item for-of-examples.html:31:13
+Shank is the 3 item for-of-examples.html:31:13
+Short Rib is the 4 item for-of-examples.html:31:13
+Navigated to file:///C:/Users/ajm524/Documents/vm_shared/javascript-class.es6.io/06%20-%20Iterables%20&%20Looping/for-of-examples.html
+Chuck is the 1 item for-of-examples.html:31:13
+Brisket is the 2 item for-of-examples.html:31:13
+Shank is the 3 item for-of-examples.html:31:13
+Short Rib is the 4 item for-of-examples.html:31:13
+Array(3) [ 1, 2, 3 ]
+for-of-examples.html:35:13
+Arguments { 0: 10, 1: 23, 2: 52, 3: 34, 4: 12, 5: 13, 6: 123, … }
+for-of-examples.html:36:13
+Navigated to file:///C:/Users/ajm524/Documents/vm_shared/javascript-class.es6.io/06%20-%20Iterables%20&%20Looping/for-of-examples.html
+Chuck is the 1 item for-of-examples.html:31:13
+Brisket is the 2 item for-of-examples.html:31:13
+Shank is the 3 item for-of-examples.html:31:13
+Short Rib is the 4 item for-of-examples.html:31:13
+Array(3) [ 1, 2, 3 ]
+for-of-examples.html:35:13
+Arguments { 0: 10, 1: 23, 2: 52, 3: 34, 4: 12, 5: 13, 6: 123, … }
+for-of-examples.html:36:13
+267 for-of-examples.html:41:13
+Navigated to file:///C:/Users/ajm524/Documents/vm_shared/javascript-class.es6.io/06%20-%20Iterables%20&%20Looping/for-of-examples.html
+Chuck is the 1 item for-of-examples.html:31:13
+Brisket is the 2 item for-of-examples.html:31:13
+Shank is the 3 item for-of-examples.html:31:13
+Short Rib is the 4 item for-of-examples.html:31:13
+NodeList(10) [ p, p, p, p, p, p, p, p, p, p ]
+for-of-examples.html:53:11
+Navigated to file:///C:/Users/ajm524/Documents/vm_shared/javascript-class.es6.io/06%20-%20Iterables%20&%20Looping/for-of-examples.html
+Chuck is the 1 item for-of-examples.html:31:13
+Brisket is the 2 item for-of-examples.html:31:13
+Shank is the 3 item for-of-examples.html:31:13
+Short Rib is the 4 item for-of-examples.html:31:13
+Navigated to file:///C:/Users/ajm524/Documents/vm_shared/javascript-class.es6.io/06%20-%20Iterables%20&%20Looping/for-of-examples.html
+Chuck is the 1 item for-of-examples.html:31:13
+Brisket is the 2 item for-of-examples.html:31:13
+Shank is the 3 item for-of-examples.html:31:13
+Short Rib is the 4 item for-of-examples.html:31:13
+Hi I'm p 07 for-of-examples.html:56:15

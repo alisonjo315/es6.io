@@ -20,7 +20,10 @@
 
   // Promise
   //   .all([weather, tweets])
+  //   // ^^ the next step (.then()) doesn't run until *everything* is done being gotten
   //   .then(responses => {
+  //     // console.log(responses);
+  //     // but let's make it a little nicer...
   //     const [weatherInfo, tweetInfo] = responses;
   //     console.log(weatherInfo, tweetInfo)
   //   });
@@ -31,8 +34,12 @@
   Promise
     .all([postsPromise, streetCarsPromise])
     .then(responses => {
+      // console.log(responses);
+      // ok so, "responses" is kinda worthless to us right now -- console says the "body" of each Response is a "ReadableStream" -- ok whatever, anyway, we want to convert the response data to json.
       return Promise.all(responses.map(res => res.json()))
+      // REMINDER: .map() takes every item in an array and does something to it! (and returns a new array)
     })
+    // then after those two ^^ come back from being turned into json...
     .then(responses => {
       console.log(responses);
     });

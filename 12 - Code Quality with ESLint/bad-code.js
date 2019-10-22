@@ -1,3 +1,8 @@
+// The following line = "hey eslint, these are global variables, don't complain about them not being initialized" (in this case, I think it's b/c we know the ga/twttr variables will be included on our page because ____ ?? (b/c they're everywhere...?))
+/* globals twttr ga */
+// The following will disable the named eslint rule for the entire script.
+// OR... see bad-code-FINISHED.js for an example of disabling eslint or an eslint rule and then reenabling it later on in the file
+// /* eslint disable no-extend-native */
 var weather = new Promise((resolve) => {
   setTimeout(() => {
     resolve({ temp: 29, conditions: 'Sunny with Clouds' });

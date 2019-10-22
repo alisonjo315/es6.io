@@ -24,7 +24,14 @@
   }
 
   const first = 'Wes';
-  const aboutMe = `I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" />`;
+  const aboutMe = `I love to do evil <img src="https://unsplash.it/100/100?random" onload="alert('you got hacked');" />`;
+
+  // const failure = `
+  //   <h3>${first}</h3>
+  //   <p>${aboutMe}</p>
+  // `;
+  // const bioFail = document.querySelector('.bio');
+  // bioFail.innerHTML = failure;
 
   const html = sanitize`
     <h3>${first}</h3>

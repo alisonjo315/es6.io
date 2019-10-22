@@ -7,9 +7,13 @@
 <body>
 <script>
   const person = { name: 'Wes', age: 100 };
+  // a proxy takes two things: the object (in this case, "person"), and the handler you want to rewrite (in this case, everything after "person, " -- inside {} )
   const personProxy = new Proxy(person, {
+    // so this part of the Proxy is called a handler, and each thing inside the handler is called a "trap" ("get()" is a trap)
     get(target, name) {
-      // console.log('someone is asking for ', target, name);
+    // ^^ "target" is the thing you're manipulating, in this case, "person"
+      console.log('someone is asking for ', target, name);
+      // return "Nahhhhh...";
       return target[name].toUpperCase();
     },
     set(target, name, value) {

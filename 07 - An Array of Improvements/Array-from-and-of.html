@@ -11,14 +11,22 @@
     <p>Snickers</p>
   </div>
 <script>
-  // const people = document.querySelectorAll('.people p');
-  // const peopleArray = Array.from(people, person => {
-  //   console.log(person);
-  //   return person.textContent;
-  // });
+  const people = document.querySelectorAll('.people p');
+  // console.log(people);
+  // const peopleArray = Array.from(people);
   // console.log(peopleArray);
+  // or, use "Array.from" when declaring "people" at the start
+  // const people = Array.from(document.querySelectorAll('.people p'));
 
-  // // const names = people.map(person => person.textContent);
+  const peopleArray = Array.from(people, person => {
+    console.log(person);
+    // return person;
+    // ^^ "ick"
+    return person.textContent;
+  });
+  console.log(peopleArray);
+
+  const names = peopleArray.map(person => person.textContent);
 
   function sumAll() {
     const nums = Array.from(arguments);
@@ -27,6 +35,7 @@
 
   sumAll(2, 34, 23, 234, 234, 234234, 234234, 2342);
 
+  // 
   const ages = Array.of(12,4,23,62,34);
   console.log(ages);
 

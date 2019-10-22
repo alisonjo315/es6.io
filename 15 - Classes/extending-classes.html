@@ -23,9 +23,16 @@
   }
 
   class Dog extends Animal {
-    constructor(name, breed) {
+    constructor(name, breed, thirst) {
+      // if we run with the next *two* lines, we'll get:
+      // ReferenceError: must call super constructor before using 'this' in derived class constructor
+      // ^^ It's sorta like b/c "name" isn't set with a default value (basically)...
+      // this.name = name;
+      // this.breed = breed;
       super(name);
       this.breed = breed;
+      // the next line does NOT complain, because in Animal, thirst is given a default value, "basically"...
+      // this.thirst = thirst
     }
     bark() {
       console.log('Bark bark I\'m a dog');

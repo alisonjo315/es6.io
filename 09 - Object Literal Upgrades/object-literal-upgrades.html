@@ -10,6 +10,23 @@
   const last = 'bos';
   const age = 2;
   const breed = 'King Charles Cav';
+
+  // repetitive and unnecessary
+  // const dog{
+  //   first: first,
+  //   last: last,
+  //   age: age,
+  //   breed: breed
+  // };
+  // This is fine -- "if the property names and variable names are the same"
+  // BTW, he and we did observe, this actually looks like an array... "but that's fine!"
+  // const dog = {
+  //   first,
+  //   last,
+  //   age,
+  //   breed
+  // };
+  // Or you can do it for some and not others -- and you can add more properties on the fly, too.
   const dog = {
     firstName: first,
     last,
@@ -19,6 +36,32 @@
   };
   console.log(dog);
 
+  // Again, no need to write all this...
+  // const modal = {
+  //   create: function() {
+
+  //   },
+  //   open: function() {
+
+  //   },
+  //   close: function() {
+
+  //   }
+  // }
+  // Can just do this:
+  // const modal = {
+  //   create(selector) {
+
+  //   },
+  //   open(content) {
+
+  //   },
+  //   close(goodbye) {
+
+  //   }
+  // }
+  // Another example, with arguments/params as if you were doing:
+  // create: function(selector) {}
   const modal = {
     create(selector) {
 
@@ -31,13 +74,16 @@
     }
   }
 
+
   function invertColor(color) {
       return '#' + ("000000" + (0xFFFFFF ^ parseInt(color.substring(1),16)).toString(16)).slice(-6);
   }
 
   const key = 'pocketColor';
+  // instead of this...
+  // const keyOpposite = 'pocketColorOpposite'; // and then calculate and whatever, blah blah
   const value = '#ffc600';
-
+  // OMG LOOK HOW I CAN SET A PROPERTY KEY NAME USING A VARIABLE NAME
   const tShirt = {
     [key]: value,
     [`${key}Opposite`]: invertColor(value)
@@ -47,6 +93,8 @@
   const values = ['medium', 'red', 100];
 
   const shirt = {
+    // instead of this...
+    // [keys[0]]: [values[0]]
     [keys.shift()]: values.shift(),
     [keys.shift()]: values.shift(),
     [keys.shift()]: values.shift(),

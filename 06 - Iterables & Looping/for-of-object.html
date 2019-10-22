@@ -14,6 +14,13 @@
     sugar: 10
   };
 
+  // he says, when we have "object entries()" or something, in later es6, it'll be simpler/easier to use "for...of" for this sort of situation -- til then, if you want to use for...of, you'd do this:
+  for (const prop of Object.keys(apple)) {
+    const value = apple[prop];
+    console.log(value, prop);
+  }
+
+  // Or you can just use for...in
   for (const prop in apple) {
     const value = apple[prop];
     console.log(value, prop);

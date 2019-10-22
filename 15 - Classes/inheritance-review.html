@@ -16,14 +16,21 @@
 
   const snickers = new Dog('Snickers', 'King Charles');
   const sunny = new Dog('Sunny', 'Golden Doodle');
+  console.log(snickers);
+  console.log(snickers.bark);
 
   Dog.prototype.bark = function() {
     console.log(`Bark Bark🇨🇦🇨🇦🇨🇦! My name is ${this.name} and I'm a ${this.breed}`);
   }
+  // observe...
+  console.log(snickers.bark);
 
   Dog.prototype.cuddle = function() {
     console.log(`I love you owner!`);
   }
+  // observe...
+  console.log(snickers.cuddle);
+
 </script>
 </body>
 </html>

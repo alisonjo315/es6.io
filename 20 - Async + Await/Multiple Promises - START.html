@@ -7,12 +7,35 @@
 
 <body>
   <script>
-    async function go() {
+    /*async function go() {
+      // one way to go -- with .then()
+      // const p1 = fetch('https://api.github.com/users/wesbos').then(r => r.json());
+      // const p2 = fetch('https://api.github.com/users/stolinski').then(r => r.json());
+      // Another way to go...
       const p1 = fetch('https://api.github.com/users/wesbos');
       const p2 = fetch('https://api.github.com/users/stolinski');
+      // ...using a "mega promise" that won't come back til they're both done
+      const res = await Promise.all([p1, p2]);
+      const dataPromises = res.map(r => r.json());
+      // const WesAndScott = await Promise.all(dataPromises);
+      // console.log(WesAndScott);
+      const [wes, scott] = await Promise.all(dataPromises);
+      console.log(wes, scott);
     }
 
-    go();
+    go();*/
+
+    async function getData(names) {
+      const promises = names.map(name => fetch(`https://api.github.com/users/${name}`).then(r => r.json()));
+      const people = await Promise.all(promises);
+      // "fyi" / might never need to use this BUT, Promise.race() comes back when the quickest one is back
+      // const people = await Promise.race(promises);
+      console.log(people);
+    }
+
+    // getData(['wesbos', 'stolinski']);
+    getData(['wesbos', 'stolinski', 'darcyclarke']);
+
   </script>
 </body>
 

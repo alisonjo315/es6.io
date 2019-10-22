@@ -8,6 +8,11 @@
 <script>
   const inventors = ['Einstein', 'Newton', 'Galileo'];
   const newInventors = ['Musk', 'Jobs'];
+  // nope:
+  // inventors.push(newInventors);
+  // In The Old Days -- totally works!!
+  // inventors.push.apply(inventors, newInventors);
+  // But we're fancy, modern people -- so:
   inventors.push(...newInventors);
   console.log(inventors);
 
@@ -17,6 +22,8 @@
     alert(`Hey there ${first} ${last}`);
   }
 
+  // This isn't quite right -- but anyway, he recommends the "spread" way of doing it further down.
+  // sayHi([${first}, ${last}]);
   sayHi(...name);
 
 </script>

@@ -7,14 +7,21 @@
 <body>
 <script>
   class MovieCollection extends Array {
+    // how do we get all the other stuff that we're passing into this class?
     constructor(name, ...items) {
-      super(...items);
+      // the next line on its own, again, will throw a ReferenceError (like we saw in extending-classes)
+      this.name = name;
+      // super(...items);
+      // ^^ syntax reminder -- we're "spreading items" into it... so that we don't get an array "items" inside our array
       this.name = name;
     }
     add(movie) {
+      // example of creating another new method
       this.push(movie);
+      // ^^ because our MovieCollection class has all the Array methods
     }
     topRated(limit = 10) {
+      // example of creating another new method
       return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
     }
   }

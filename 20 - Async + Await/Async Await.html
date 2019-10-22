@@ -18,6 +18,8 @@
 
     function catchErrors(fn) {
       return function (...args) {
+        // run the function that we're wrapping in this error-catching function -- and we'll even pass the argumenst for that function -- wowza.
+        // outcome: we won't have to write a try...catch for every function, 
         return fn(...args).catch((err) => {
           console.error('Ohhhh nooo!!!!!');
           console.error(err);

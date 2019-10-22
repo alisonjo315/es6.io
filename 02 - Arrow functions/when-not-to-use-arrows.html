@@ -19,6 +19,10 @@
     this.classList.toggle('on');
   });
 
+  // BECAUSE... if you do it this way, "this" is just "window" --
+  // GRAB FROM "10"
+
+
   // When you need a method to bind to an object
   const person = {
     points: 23,

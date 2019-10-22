@@ -6,21 +6,41 @@
 </head>
 <body>
 <script>
+  class Dog {
+    // only method that's actually required when you create a class is a constructor
+    constructor(name, breed) {
+      this.name = name;
+      this.breed = breed;      
+    }
+    // syntax note: no commas between methods in classes
+    bark() {
+      console.log(`Bark Bark! My name is ${this.name}`);
+    }
+    cuddle() {
+      console.log(`I love you owner!`);
+    }
+    // static things can only be called from "Dog" directly -- we won't be able to access this from snickers.info
+    static info() {
+      console.log('A dog is better than a cat by 10 times');
+    }
+    // see also: getters/setters examples in classes-FINISHED.html
+  }
+
+  const snickers = new Dog('Snickers', 'King Charles');
+  const sunny = new Dog('Sunny', 'Golden Doodle');
+
+  // I don't know what this and the two "Dog.prototype.*" blocks are doing here... possibly just copied from inheritance-review, orrrr... not sure...
+  // I guesss maybe just to show similarities / congruencies with classes...??
   function Dog(name, breed) {
     this.name = name;
     this.breed = breed;
   }
-
   Dog.prototype.bark = function() {
     console.log(`Bark Bark! My name is ${this.name}`);
   };
-
   Dog.prototype.cuddle = function() {
     console.log(`I love you owner!`);
   };
-
-  const snickers = new Dog('Snickers', 'King Charles');
-  const sunny = new Dog('Sunny', 'Golden Doodle');
 
 </script>
 </body>

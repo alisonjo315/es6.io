@@ -15,8 +15,17 @@
     };
     return converted;
   }
+  const MEX = convertCurrency(100).MEX;
+  console.log(MEX);
+  // const { MEX, USD, AUD, GPB } = convertCurrency(100);
+  // console.log(USD, AUD, GPB, MEX);
+  // const { USD, AUD } = convertCurrency(100);
+  // console.log(USD, AUD);
 
-  function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
+  // "normal"
+  function tipCalc({ total = 100, tip = 0.15, tax = 0.13 }) {
+  // Or... by adding this last (weird) thing, it won't yell at us if we run tipCalc() without passing any arguments...
+  // function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
     return total + (tip * total) + (tax * total);
   }
 

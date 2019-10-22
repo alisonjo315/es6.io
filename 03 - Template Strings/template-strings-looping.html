@@ -12,6 +12,7 @@
     { name: 'Sunny', age: 1 }
   ];
 
+  // "nesting template strings"!
   const markup = `
     <ul class="dogs">
       ${dogs.map(dog => `
@@ -22,6 +23,8 @@
         </li>`).join('')}
     </ul>
   `;
+        // have to have ".join" b/c ".map" returns an array -- and apparently, it's "okay" to spit out the return value of "map" in your markup, but, EW, plus, it sticks a "," between each array item if you spit it out that way...
+        // .join acts on an array -- it returns a string, with whatever you put in .join('whatever') btwen each array item.
   document.body.innerHTML = markup;
 
 </script>

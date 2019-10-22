@@ -5,11 +5,30 @@
   <title>Native Promises</title>
 </head>
 
-<video controls class="handsome"></video>
-
 <body>
-  <script>
 
+  <video controls class="handsome"></video>
+
+  <script>
+  	const res = fetch('https://api.github.com/users/alisonjo315').then(res => {
+	// to test our "error"
+  	// const res = fetch('https://asdfapi.github.com/users/alisonjo315').then(res => {
+  		console.log(res);
+  		return res.json();
+  	}).then(res => {
+  		console.log(res);
+  	}).catch(err => {
+  		// use default error...
+  		// console.error(err);
+  		// use custom error message...
+  		console.error('OH NO!!!');
+  	})
+
+  	const video = document.querySelector('.handsome');
+    navigator.mediaDevices.getUserMedia({ video: true }).then(mediaStream => {
+ 	 	video.srcObject = mediaStream;
+ 	 	// other stuff -- see other version of this file
+ 	 });
   </script>
 </body>
 

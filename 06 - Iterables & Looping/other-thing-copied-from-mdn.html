@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iterables & Looping</title>
+</head>
+<body>
+	(Trying to understand the for...in / for...of stuff -- so!)
+	From <a href="https://developer.mozilla.org/en-us/docs/web/javascript/reference/statements/for...of">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of</a>
+	>> "Difference between for...of and for...in"
+<script>
+
+Object.prototype.objCustom = function() {}; 
+Array.prototype.arrCustom = function() {};
+
+const iterable = [3, 5, 7];
+iterable.foo = 'hello';
+
+for (const i in iterable) {
+  console.log(i); // logs 0, 1, 2, "foo", "arrCustom", "objCustom"
+}
+
+for (const i in iterable) {
+  if (iterable.hasOwnProperty(i)) {
+    //console.log(i); // logs 0, 1, 2, "foo"
+  }
+}
+
+for (const i of iterable) {
+  //console.log(i); // logs 3, 5, 7
+}
+
+</script>
+</body>
+</html>

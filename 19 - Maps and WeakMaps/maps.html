@@ -11,9 +11,15 @@
   dogs.set('Snickers', 3);
   dogs.set('Sunny', 2);
   dogs.set('Hugo', 10);
+  console.log(dogs.has('Snickers'));
+  console.log(dogs.get('Snickers'));
+  // console.log(dogs.delete('Hugo'));
+  // console.log(dogs.clear());
+
 
   dogs.forEach((val, key) => console.log(val, key));
 
+  // one of the benefist of using Map is that you get to use for...of (although for...of is coming to objects at some point in the future-ish)
   for (const [key, val] of dogs) {
     console.log(key, val);
   }

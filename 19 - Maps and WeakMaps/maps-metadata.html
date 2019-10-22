@@ -23,9 +23,13 @@
   const buttons = document.querySelectorAll('button');
 
   buttons.forEach(button => {
+    // the "button" object itself is the "key" (the initial value is 0)
+    // (i.e. the key is an object!)
     clickCounts.set(button, 0);
     button.addEventListener('click', function() {
       const val = clickCounts.get(this);
+      // ^^ "this" is the button  value of the key, i.e. the clickCount number
+      console.log(val);
       clickCounts.set(this, val + 1);
       console.log(clickCounts);
     });

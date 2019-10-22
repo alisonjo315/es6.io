@@ -11,7 +11,10 @@
     <p>Randy</p>
   </div>
 <script>
+
   const people = Array.from(document.querySelectorAll('.people p'));
+  // Or:
+  // const people = [...document.querySelectorAll('.people p')];
   const names = people.map((person) => person.textContent );
 
   const deepDish = {
@@ -31,9 +34,15 @@
   ];
   const id = 632429;
   const commentIndex = comments.findIndex(comment => comment.id === id);
+  // BY THE WAY, the part after => sorta means, "I'm going to return if comment.id === id"
 
+  // const newComments = [comments.slice(0,commentIndex), comments.slice(commentIndex + 1)];
+  // ^^ creates an array of arrays -- but what we want is an array of comment objects -- so instead...
   const newComments = [...comments.slice(0,commentIndex), ...comments.slice(commentIndex + 1)];
   console.log(newComments);
+
+  // "imaginary next step"
+  // this.setState({comments:newComments})
 
 </script>
 </body>
